@@ -83,18 +83,6 @@
   "place_id": "0x103b9226dfe4d8bd:0xadb1c431066f0555",
   "query": "Pipes and Co Plumbing Kodesoh Ikeja"
  },
- "Local Bukka": {
-  "name": "Local Bukka",
-  "address": "6-10 Nathan St, Yaba, Lagos 101241, Lagos",
-  "phone": null,
-  "website": null,
-  "unclaimed": true,
-  "add_phone": true,
-  "add_website": true,
-  "url": "https://www.google.com/maps/place/Local+Bukka/@6.5099316,3.3619894,16z/data=!4m10!1m2!2m1!1sLocal+Bukka+Yaba+Lagos!3m6!1s0x103b8d2aececfbbf:0x245574cd50276998!8m2!3d6.5099316!4d3.3663668!15sChZMb2NhbCBCdWtrYSBZYWJhIExhZ29zWhgiFmxvY2FsIGJ1a2thIHlhYmEgbGFnb3OSARd3ZXN0X2FmcmljYW5fcmVzdGF1cmFudOABAA!16s%2Fg%2F11ngtpp8rp?entry=ttu",
-  "place_id": "0x103b8d2aececfbbf:0x245574cd50276998",
-  "query": "Local Bukka Yaba Lagos"
- },
  "Ace Wash N Dry": {
   "name": "Ace Wash N Dry",
   "address": "Kudirat Abiola Way, Oregun, Ikeja 101233, Lagos",

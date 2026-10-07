@@ -106,7 +106,7 @@ read off the live listing — it does not mean the business is in the send queue
 | IKOKO | 0x103b935dfc959a3f:0x6b3d0db68250080 |
 | Ican Lectures | 0x103b922ed729f155:0xaa8caa95f5b8713c |
 | Ikeja lagos state | 0x103b93003905e769:0xcd7515626dd4c7dc |
-| Japhet Laundry and Dry-cleaning Services / Ikeja, Lagos | 0x103b935fb5920c5f:0x1a46bb373584bb5c |
+| Japhet Laundry and Dry-cleaning Services | 0x103b935fb5920c5f:0x1a46bb373584bb5c |
 | Nailsbyfey / Nails techinician in Ikeja / Nails in Lagos | 0x103b93734fd628af:0x905f66b82097a640 |
 | Nett Pharmacy | 0x103b923f67678ebd:0x2f2eef99a591f661 |
 | Original Parts Nigeria | 0x103b924060ea1cad:0xbd0f37e167712f50 |

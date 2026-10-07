@@ -873,7 +873,8 @@
    "category": "Salon / spa / barber",
    "phone_invalid": false,
    "hold": false,
-   "reachable": true
+   "reachable": true,
+   "address_note": "verbatim from the listing; the duplication is the owner's input, not a scrape error"
   },
   {
    "name": "Ronnie nailed it | Nails techinician in ikeja | Nails in Lagos",

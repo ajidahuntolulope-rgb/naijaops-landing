@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Cafecito — Digital Presence Audit | NaijaOps</title>
+<style>
+  @page { size: A4; margin: 16mm 15mm; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Segoe UI', system-ui, Arial, sans-serif; color: #061b31; font-size: 10.5pt; line-height: 1.45; }
+  .hdr { border-bottom: 2px solid #533afd; padding-bottom: 10px; margin-bottom: 16px; display: flex; justify-content: space-between; align-items: flex-end; }
+  .brand { font-size: 15pt; font-weight: 700; letter-spacing: -0.3px; }
+  .brand span { color: #533afd; }
+  .hdr .meta { font-size: 8.5pt; color: #64748d; text-align: right; }
+  h1 { font-size: 17pt; font-weight: 600; letter-spacing: -0.4px; margin-bottom: 2px; }
+  .sub { color: #64748d; font-size: 9.5pt; margin-bottom: 14px; }
+  h2 { font-size: 11pt; font-weight: 700; color: #1c1e54; margin: 16px 0 7px; padding-bottom: 3px; border-bottom: 1px solid #e5edf5; text-transform: uppercase; letter-spacing: 0.6px; }
+  table { width: 100%; border-collapse: collapse; font-size: 9.5pt; }
+  th, td { text-align: left; padding: 5px 8px; border-bottom: 1px solid #eef2f7; vertical-align: top; }
+  th { background: #f6f8fb; font-weight: 600; color: #273951; font-size: 8.5pt; text-transform: uppercase; letter-spacing: 0.4px; }
+  .ok { color: #108c3d; font-weight: 600; }
+  .bad { color: #c0392b; font-weight: 600; }
+  .warn { color: #b7791f; font-weight: 600; }
+  ul { margin: 6px 0 0 18px; }
+  li { margin-bottom: 5px; }
+  .fix { border: 1px solid #e5edf5; border-left: 4px solid #533afd; border-radius: 4px; padding: 9px 12px; margin-bottom: 8px; background: #fcfdff; }
+  .fix h3 { font-size: 10pt; font-weight: 700; margin-bottom: 3px; color: #1c1e54; }
+  .fix p { font-size: 9.5pt; color: #3d4f66; }
+  .box { background: #f6f8fb; border: 1px solid #e5edf5; border-radius: 4px; padding: 10px 12px; font-size: 9.5pt; margin-top: 8px; }
+  .src { font-size: 8pt; color: #8896a8; margin-top: 3px; }
+  .foot { margin-top: 18px; padding-top: 10px; border-top: 1px solid #e5edf5; font-size: 8.5pt; color: #64748d; }
+  .kpi { display: flex; gap: 10px; margin: 10px 0 4px; }
+  .kpi div { flex: 1; border: 1px solid #e5edf5; border-radius: 4px; padding: 8px; text-align: center; }
+  .kpi strong { display: block; font-size: 15pt; font-weight: 700; color: #1c1e54; }
+  .kpi span { font-size: 8pt; color: #64748d; text-transform: uppercase; letter-spacing: 0.3px; }
+</style>
+</head>
+<body>
+
+<div class="hdr">
+  <div class="brand">Naija<span>Ops</span></div>
+  <div class="meta">Digital Presence Audit<br>Prepared 7 October 2026<br>Audit ID: NO-2026-0001</div>
+</div>
+
+<h1>Cafecito — Ikeja GRA, Lagos</h1>
+<p class="sub">11 Joel Ogunnaike St, Ikeja GRA, Lagos 101233 &nbsp;·&nbsp; Coffee shop &nbsp;·&nbsp; What a customer sees when they search for you on Google</p>
+
+<div class="kpi">
+  <div><strong>4.0</strong><span>Google rating</span></div>
+  <div><strong>0</strong><span>Photos by owner</span></div>
+  <div><strong>No</strong><span>Phone on listing</span></div>
+  <div><strong>No</strong><span>Website on listing</span></div>
+  <div><strong>Unclaimed</strong><span>Listing status</span></div>
+</div>
+
+<h2>1. What a customer actually sees</h2>
+<p>This is your Google Maps listing, read exactly as a first-time customer reads it on a phone. Everything below was observed on the live listing on 7 October 2026.</p>
+<table>
+  <tr><th style="width:34%">Field</th><th style="width:20%">Status</th><th>What the customer gets</th></tr>
+  <tr><td>Listing claimed</td><td class="bad">Not claimed</td><td>Google shows a "Claim this business" button. Nobody from Cafecito controls this listing.</td></tr>
+  <tr><td>Phone number</td><td class="bad">Missing</td><td>Google displays "Add place's phone number". A customer who wants to call or reserve cannot.</td></tr>
+  <tr><td>Website / link</td><td class="bad">Missing</td><td>Google displays "Add website". There is no link out to your Instagram or a menu.</td></tr>
+  <tr><td>Photos</td><td class="bad">Effectively none</td><td>One image only, a drone capture dated Jul 2025. Google shows "Add photos &amp; videos". No food, no interior, no drinks.</td></tr>
+  <tr><td>Opening hours</td><td class="ok">Present</td><td>Hours are showing correctly (e.g. "Opens 8 am Thu"). This part works.</td></tr>
+  <tr><td>Category</td><td class="warn">Narrow</td><td>Listed as "Coffee shop" only. Searches for "breakfast Ikeja", "restaurant Ikeja GRA" and "brunch Lagos" will not surface you.</td></tr>
+  <tr><td>Rating</td><td class="warn">4.0</td><td>Visible and respectable, but it sits under a listing that looks abandoned, which discounts it.</td></tr>
+  <tr><td>Online ordering</td><td class="bad">None</td><td>No "Place an order" link. Competitors nearby route customers to Glovo directly from Maps.</td></tr>
+</table>
+<p class="src">Observed directly on the Google Maps listing for Cafecito, 11 Joel Ogunnaike St, Ikeja GRA, on 7 October 2026.</p>
+
+<h2>2. The gap, stated plainly</h2>
+<p>Cafecito already has the hard parts done. You have an active Instagram (<strong>@cafecito.ikeja</strong>), you trade seven days a week, and your food and space photograph well. Reviewers who find you tend to like you.</p>
+<p>The problem is that <strong>none of that reaches Google</strong>. A customer in Ikeja searching "coffee near me" or "breakfast Ikeja GRA" lands on an unclaimed shell: no number to call, no link to your Instagram, and a single drone photo standing in for your food. The listing reads like a closed business. Meanwhile the places around you — IKOKO, Cilantro, Food Headquarters — carry phone numbers, websites and photo galleries.</p>
+<div class="box">
+  <strong>The one-line version:</strong> you are running a real, active café behind a Google listing that says you might not exist. The fix is not marketing spend. It is 90 minutes of claiming and filling in what you already own.
+</div>
+
+<h2>3. First three fixes, in order</h2>
+
+<div class="fix">
+  <h3>Fix 1 — Claim the listing (highest impact, do this first)</h3>
+  <p>Click "Claim this business" on your Google Maps listing and complete verification. Until this is done, nothing else you fix will stick, because you have no owner control over the profile. Google usually verifies by phone, postcard or video. Everything below depends on this step.</p>
+</div>
+
+<div class="fix">
+  <h3>Fix 2 — Fill the three empty fields</h3>
+  <p>Once claimed, add: (a) your phone number, (b) a link — your Instagram profile at minimum, a simple one-page menu site at best, and (c) a second category. Change "Coffee shop" to include "Breakfast restaurant" and "Cafe", so you appear for breakfast and brunch searches, not just coffee. This is roughly 20 minutes of work and it closes the three largest holes a customer sees.</p>
+</div>
+
+<div class="fix">
+  <h3>Fix 3 — Put real photos up, then ask for reviews</h3>
+  <p>Upload 15–20 photos: the space, the signature drinks, three or four dishes, the exterior so people recognise it from the road. Replace the drone shot as the cover image with your best food photo. Then ask your regulars for reviews — you already have a 4.0 and every additional honest review lifts the ranking in local search. Photos and review volume are the two signals Google uses to decide who shows up first.</p>
+</div>
+
+<h2>4. What this is worth to you</h2>
+<p>You are paying for your space, your staff and your ingredients every day. Right now the single largest free source of new customers in Nigeria — Google Maps — is showing a blank listing with no way to contact you. Fixes 1 and 2 are free and take under two hours. Fix 3 is free and takes an afternoon.</p>
+<p>There is no charge for this audit and no obligation. If you want help doing the three fixes rather than reading about them, that is what we do — Google Business Profile setup from ₦15,000.</p>
+
+<div class="foot">
+  <strong>NaijaOps</strong> &nbsp;·&nbsp; hopequasher@gmail.com &nbsp;·&nbsp; WhatsApp +234 814 558 0220<br>
+  Prepared for Cafecito, 11 Joel Ogunnaike St, Ikeja GRA, Lagos. All observations taken from the public Google Maps listing on 7 October 2026. Third-party review counts, where cited, come from public listing aggregators and are labelled as such.
+</div>
+
+</body>
+</html>

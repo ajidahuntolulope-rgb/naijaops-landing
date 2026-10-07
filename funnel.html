@@ -56,6 +56,7 @@
             transition: border-color 0.2s;
         }
         .form-group input:focus { outline: none; border-color: var(--color-accent); }
+        #form-status { margin-top: 16px; text-align: center; font-size: 15px; }
         .btn {
             display: inline-block;
             width: 100%;
@@ -135,7 +136,7 @@
             <div class="form-box">
                 <h2>Get Your Free Audit</h2>
                 <p>Tell us about your restaurant and we'll send you a personalized digital presence audit report.</p>
-                <form action="mailto:hopequasher@gmail.com" method="post" enctype="text/plain">
+                <form id="audit-form">
                     <div class="form-group">
                         <label for="name">Your Name</label>
                         <input type="text" id="name" name="name" required>
@@ -145,7 +146,7 @@
                         <input type="email" id="email" name="email" required>
                     </div>
                     <div class="form-group">
-                        <label for="restaurant">Restaurant Name</label>
+                        <label for="restaurant">Business Name</label>
                         <input type="text" id="restaurant" name="restaurant" required>
                     </div>
                     <div class="form-group">
@@ -153,18 +154,16 @@
                         <input type="text" id="location" name="location" placeholder="e.g., Lekki, Lagos">
                     </div>
                     <div class="form-group">
-                        <label for="website">Current Website (if any)</label>
-                        <input type="url" id="website" name="website" placeholder="https://">
+                        <label for="website">Current Website or Google Listing (if any)</label>
+                        <input type="text" id="website" name="website" placeholder="https:// or leave blank">
                     </div>
                     <button type="submit" class="btn">Get My Free Audit</button>
+                    <div id="form-status" role="status"></div>
+                    <p style="text-align:center; margin-top:16px; font-size:15px;">Prefer WhatsApp? <a href="https://wa.me/2348145580220?text=Hi%20NaijaOps%2C%20I%27d%20like%20the%20free%20digital%20presence%20audit." style="color:var(--color-accent); font-weight:500;">Message us on WhatsApp</a></p>
                 </form>
             </div>
 
             <div class="trust-badges">
-                <div class="trust-badge">
-                    <strong>50+</strong>
-                    Restaurants Audited
-                </div>
                 <div class="trust-badge">
                     <strong>100%</strong>
                     Free & No Obligation
@@ -172,6 +171,10 @@
                 <div class="trust-badge">
                     <strong>48hr</strong>
                     Turnaround Time
+                </div>
+                <div class="trust-badge">
+                    <strong>Direct</strong>
+                    You talk to the person doing the work
                 </div>
             </div>
 
@@ -198,16 +201,56 @@
     <section class="testimonial">
         <div class="container">
             <blockquote>
-                "NaijaOps helped us understand why we weren't getting found online. Within 2 months of implementing their recommendations, our customer inquiries increased by 200%."
+                "We're new. We have not audited 50 restaurants and we won't pretend we have. What we will do is look at your listing the way a customer does, tell you what's missing, and show you what to fix first."
             </blockquote>
-            <cite>— Restaurant Owner, Lagos</cite>
+            <cite>— NaijaOps, on being straight with you</cite>
         </div>
     </section>
 
     <footer>
         <div class="container">
-            <p>&copy; 2026 NaijaOps. Helping Nigerian restaurants get found online.</p>
+            <p>&copy; 2026 NaijaOps. Helping Nigerian businesses get found online.</p>
         </div>
     </footer>
+
+    <script>
+    document.getElementById('audit-form').addEventListener('submit', function (e) {
+        e.preventDefault();
+        var form = this;
+        var status = document.getElementById('form-status');
+        var btn = form.querySelector('button[type="submit"]');
+        status.style.color = '';
+        status.textContent = 'Sending...';
+        btn.disabled = true;
+
+        fetch('https://formsubmit.co/ajax/ae81436df58a9570b4fe8e8b68933697', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+            body: JSON.stringify({
+                _subject: 'New free audit request - NaijaOps',
+                name: form.name.value,
+                email: form.email.value,
+                business: form.restaurant.value,
+                location: form.location.value,
+                current_listing: form.website.value
+            })
+        })
+        .then(function (r) { return r.json(); })
+        .then(function (data) {
+            if (String(data.success) === 'true') {
+                status.style.color = '#108c3d';
+                status.textContent = 'Got it. Your audit is on the way within 48 hours.';
+                form.reset();
+            } else {
+                throw new Error('send failed');
+            }
+        })
+        .catch(function () {
+            status.style.color = '#c0392b';
+            status.textContent = 'Sending failed. Please email hopequasher@gmail.com or use WhatsApp.';
+        })
+        .then(function () { btn.disabled = false; });
+    });
+    </script>
 </body>
 </html>

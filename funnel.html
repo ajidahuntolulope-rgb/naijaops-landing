@@ -135,6 +135,10 @@
                         <input type="text" id="restaurant" name="restaurant" required>
                     </div>
                     <div class="form-group">
+                        <label for="phone">Phone Number (WhatsApp if possible)</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    <div class="form-group">
                         <label for="location">Location (City/Area)</label>
                         <input type="text" id="location" name="location" placeholder="e.g., Lekki, Lagos">
                     </div>
@@ -207,6 +211,7 @@
                 _subject: 'New free audit request - NaijaOps',
                 name: form.name.value,
                 email: form.email.value,
+                phone: form.phone.value,
                 business: form.restaurant.value,
                 location: form.location.value,
                 current_listing: form.website.value

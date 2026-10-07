@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NaijaOps — Digital Presence Services for Nigerian Businesses</title>
+    <meta name="description" content="We help Nigerian businesses establish and grow their digital presence. Business registration, Google Business Profile, websites, social media setup, and market research.">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;500;600&family=Source+Code+Pro:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-bg: #ffffff;
+            --color-text: #061b31;
+            --color-body: #64748d;
+            --color-label: #273951;
+            --color-accent: #533afd;
+            --color-accent-hover: #4434d4;
+            --color-accent-light: #b9b9f9;
+            --color-border: #e5edf5;
+            --color-success: #15be53;
+            --color-success-text: #108c3d;
+            --color-brand-dark: #1c1e54;
+            --color-dark-navy: #0d253d;
+            --shadow-blue: rgba(50,50,93,0.25);
+            --shadow-black: rgba(0,0,0,0.1);
+            --shadow-ambient: rgba(23,23,23,0.08);
+            --shadow-soft: rgba(23,23,23,0.06);
+            --font-primary: 'Source Sans 3', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+            --font-mono: 'Source Code Pro', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-primary);
+            color: var(--color-text);
+            background: var(--color-bg);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 1080px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Navigation */
+        nav {
+            position: sticky;
+            top: 0;
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--color-border);
+            z-index: 100;
+        }
+
+        nav .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 64px;
+        }
+
+        .logo {
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--color-text);
+            text-decoration: none;
+            letter-spacing: -0.5px;
+        }
+
+        .logo span {
+            color: var(--color-accent);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-size: 14px;
+            font-weight: 400;
+            color: var(--color-text);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--color-accent);
+        }
+
+        .nav-cta {
+            background: var(--color-accent);
+            color: #ffffff !important;
+            padding: 8px 16px;
+            border-radius: 4px;
+            font-weight: 400;
+            transition: background 0.2s;
+        }
+
+        .nav-cta:hover {
+            background: var(--color-accent-hover);
+        }
+
+        /* Hero */
+        .hero {
+            padding: 96px 0 80px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 56px;
+            font-weight: 300;
+            line-height: 1.03;
+            letter-spacing: -1.4px;
+            color: var(--color-text);
+            margin-bottom: 24px;
+        }
+
+        .hero h1 span {
+            color: var(--color-accent);
+        }
+
+        .hero p {
+            font-size: 18px;
+            font-weight: 300;
+            line-height: 1.40;
+            color: var(--color-body);
+            max-width: 640px;
+            margin: 0 auto 40px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            border-radius: 4px;
+            font-size: 16px;
+            font-weight: 400;
+            text-decoration: none;
+            transition: all 0.2s;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: var(--color-accent);
+            color: #ffffff;
+        }
+
+        .btn-primary:hover {
+            background: var(--color-accent-hover);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--color-accent);
+            border: 1px solid var(--color-accent-light);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(83,58,253,0.05);
+        }
+
+        /* Services */
+        .services {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            font-size: 32px;
+            font-weight: 300;
+            letter-spacing: -0.64px;
+            text-align: center;
+            margin-bottom: 16px;
+        }
+
+        .section-subtitle {
+            font-size: 18px;
+            font-weight: 300;
+            color: var(--color-body);
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto 64px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+        }
+
+        .service-card {
+            background: #ffffff;
+            border: 1px solid var(--color-border);
+            border-radius: 6px;
+            padding: 32px;
+            transition: box-shadow 0.2s, transform 0.2s;
+        }
+
+        .service-card:hover {
+            box-shadow: 0 30px 45px -30px var(--shadow-blue), 0 18px 36px -18px var(--shadow-black);
+            transform: translateY(-2px);
+        }
+
+        .service-icon {
+            width: 48px;
+            height: 48px;
+            background: rgba(83,58,253,0.1);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+
+        .service-card h3 {
+            font-size: 22px;
+            font-weight: 300;
+            letter-spacing: -0.22px;
+            margin-bottom: 12px;
+        }
+
+        .service-card p {
+            font-size: 16px;
+            font-weight: 300;
+            color: var(--color-body);
+            margin-bottom: 16px;
+        }
+
+        .service-price {
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--color-accent);
+        }
+
+        /* Why Us */
+        .why-us {
+            padding: 80px 0;
+            background: var(--color-brand-dark);
+            color: #ffffff;
+        }
+
+        .why-us .section-title {
+            color: #ffffff;
+        }
+
+        .why-us .section-subtitle {
+            color: rgba(255,255,255,0.7);
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 32px;
+        }
+
+        .why-item {
+            text-align: center;
+        }
+
+        .why-item h3 {
+            font-size: 22px;
+            font-weight: 300;
+            margin-bottom: 12px;
+        }
+
+        .why-item p {
+            font-size: 16px;
+            font-weight: 300;
+            color: rgba(255,255,255,0.7);
+        }
+
+        /* Contact */
+        .contact {
+            padding: 80px 0;
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 14px;
+            font-weight: 400;
+            color: var(--color-label);
+            margin-bottom: 8px;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid var(--color-border);
+            border-radius: 4px;
+            font-family: var(--font-primary);
+            font-size: 16px;
+            color: var(--color-text);
+            transition: border-color 0.2s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--color-accent);
+        }
+
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .btn-submit {
+            width: 100%;
+            padding: 14px;
+            font-size: 16px;
+        }
+
+        /* Footer */
+        footer {
+            padding: 40px 0;
+            border-top: 1px solid var(--color-border);
+            text-align: center;
+        }
+
+        footer p {
+            font-size: 14px;
+            color: var(--color-body);
+        }
+
+        footer a {
+            color: var(--color-accent);
+            text-decoration: none;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 36px;
+                letter-spacing: -0.8px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .why-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <a href="#" class="logo">Naija<span>Ops</span></a>
+            <ul class="nav-links">
+                <li><a href="#services">Services</a></li>
+                <li><a href="#why-us">Why Us</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#contact" class="nav-cta">Get Started</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Your Business, <span>Digitally Visible</span></h1>
+            <p>We help Nigerian businesses establish and grow their digital presence. From business registration to websites and social media — we handle the technical side so you can focus on running your business.</p>
+            <div class="hero-buttons">
+                <a href="#contact" class="btn btn-primary">Get Started</a>
+                <a href="#services" class="btn btn-secondary">View Services</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="services" id="services">
+        <div class="container">
+            <h2 class="section-title">What We Do</h2>
+            <p class="section-subtitle">Affordable, high-quality digital services tailored for Nigerian businesses.</p>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">📋</div>
+                    <h3>Business Registration</h3>
+                    <p>Complete CAC registration assistance. We handle the paperwork and processes so your business is legally recognized.</p>
+                    <div class="service-price">From ₦50,000</div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">📍</div>
+                    <h3>Google Business Profile</h3>
+                    <p>Create and optimize your Google Business listing so customers can find you on Google Search and Maps.</p>
+                    <div class="service-price">From ₦15,000</div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🌐</div>
+                    <h3>Website Creation</h3>
+                    <p>Simple, mobile-friendly business websites that work. Professional design without the agency price tag.</p>
+                    <div class="service-price">From ₦50,000</div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">📱</div>
+                    <h3>Social Media Setup</h3>
+                    <p>Professional Facebook, Instagram, and Twitter/X business profiles that build trust and attract customers.</p>
+                    <div class="service-price">From ₦20,000</div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">📊</div>
+                    <h3>Market Research</h3>
+                    <p>Industry-specific market intelligence to help you make informed business decisions.</p>
+                    <div class="service-price">From ₦30,000</div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🔍</div>
+                    <h3>Digital Audit</h3>
+                    <p>Comprehensive analysis of your current digital presence with actionable recommendations.</p>
+                    <div class="service-price">From ₦25,000</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="why-us" id="why-us">
+        <div class="container">
+            <h2 class="section-title">Why Choose NaijaOps</h2>
+            <p class="section-subtitle">We understand the Nigerian market and what it takes to succeed here.</p>
+            <div class="why-grid">
+                <div class="why-item">
+                    <h3>🇳🇬 Local Expertise</h3>
+                    <p>Deep understanding of Nigerian business environment, regulations, and market dynamics.</p>
+                </div>
+                <div class="why-item">
+                    <h3>💰 Affordable Pricing</h3>
+                    <p>Professional services at prices that make sense for Nigerian SMEs and startups.</p>
+                </div>
+                <div class="why-item">
+                    <h3>⚡ Fast Turnaround</h3>
+                    <p>Quick delivery without compromising quality. We respect your time.</p>
+                </div>
+                <div class="why-item">
+                    <h3>🤝 Personalized Service</h3>
+                    <p>Every business is unique. We tailor our services to your specific needs and goals.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <p class="section-subtitle">Ready to grow your business? Send us a message and we'll get back to you within 24 hours.</p>
+            <form class="contact-form" action="mailto:hopequasher@gmail.com" method="post" enctype="text/plain">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone">
+                </div>
+                <div class="form-group">
+                    <label for="service">Service Needed</label>
+                    <select id="service" name="service" required>
+                        <option value="">Select a service</option>
+                        <option value="registration">Business Registration</option>
+                        <option value="google-business">Google Business Profile</option>
+                        <option value="website">Website Creation</option>
+                        <option value="social-media">Social Media Setup</option>
+                        <option value="market-research">Market Research</option>
+                        <option value="digital-audit">Digital Audit</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" placeholder="Tell us about your business and what you need..."></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary btn-submit">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 NaijaOps. All rights reserved. | <a href="mailto:hopequasher@gmail.com">hopequasher@gmail.com</a></p>
+        </div>
+    </footer>
+</body>
+</html>

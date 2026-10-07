@@ -19,9 +19,10 @@ Hi TEJ Salon and Spa — I looked at your Google listing for 19 Adeleke St, Alle
 Your listing is claimed and your number is on it, but there's no website link, so anyone who
 finds you on Google Maps has no way to see your services or prices.
 
-I've written a short audit of what's missing and the first three fixes.
+I've written a short audit of what's missing and the first three fixes — it's here:
+https://ajidahuntolulope-rgb.github.io/naijaops-landing/tej-salon-ikeja-audit.pdf
 
-Want me to send it? Free, nothing to sign.
+Free, nothing to sign. Take a look and tell me if anything in it is wrong.
 
 ---
 

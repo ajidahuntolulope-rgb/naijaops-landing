@@ -148,7 +148,7 @@
                     </div>
                     <button type="submit" class="btn">Get My Free Audit</button>
                     <div id="form-status" role="status"></div>
-                    <p style="text-align:center; margin-top:16px; font-size:15px;">Prefer WhatsApp? <a href="https://wa.me/2348145580220?text=Hi%20NaijaOps%2C%20I%27d%20like%20the%20free%20digital%20presence%20audit." style="color:var(--color-accent); font-weight:500;">Message us on WhatsApp</a></p>
+                    
                 </form>
             </div>
 
@@ -229,7 +229,7 @@
         })
         .catch(function () {
             status.style.color = '#c0392b';
-            status.textContent = 'Sending failed. Please message us on WhatsApp instead — the link is just below this form.';
+            status.textContent = 'Sending failed. Please try again in a moment.';
         })
         .then(function () { btn.disabled = false; });
     });

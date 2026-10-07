@@ -6,7 +6,7 @@ and confirms the WhatsApp number.
 Target: TEJ Salon and Spa, 19 Adeleke St, Allen, Ikeja.
 Send from: a WhatsApp number Tolulope will answer — NOT YET CONFIRMED. Do not add any number
 to this draft, to a page, or to a PDF until he confirms it in writing.
-Maps place URL: https://www.google.com/maps/place/TEJ+Salon+and+Spa/@6.6022239,3.350691,17z/data=!3m1!4b1!4m6!3m5!1s0x103b93cfa8f07707:0x363406da18f16244!8m2!3d6.6022239!4d3.350691!16s%2Fg%2F11gy9yv9cw
+Maps place URL (same canonical URL as the PDF): https://www.google.com/maps/place/?q=place_id:0x103b93cfa8f07707:0x363406da18f16244
 Place ID: 0x103b93cfa8f07707:0x363406da18f16244
 Phone on listing: 0906 371 8357
 Website on listing: none
@@ -55,7 +55,7 @@ still has no website link, so I assume it's not a priority. Happy to leave it."*
 
 ## Before sending — three checks
 
-1. Re-open the place URL above the morning of the send. If a website has appeared, kill the pitch.
+1. Re-open the place URL above the morning of the send (same canonical URL the PDF uses). If a website has appeared, kill the pitch.
 2. Confirm the WhatsApp number is one Tolulope will answer.
 3. Tolulope must have answered A or B on the inbox question.
 

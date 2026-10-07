@@ -18,18 +18,19 @@
 <p>Filtered from the 86-business screen. <strong>The filter is code</strong> (<code>buyers-v2.json</code>,</p>
 <p><code>buyer-filter-log.json</code>), so this page cannot drift from the data by hand.</p>
 
-<h2>Corrections to the previous version</h2>
+<h2>Corrections to earlier versions</h2>
 
 <p class='li'>&bull; <strong>Energy plumbing professional services</strong> (Idimu, Alimosho) — out of area. Dropped.</p>
 <p class='li'>&bull; <strong>Local Bukka (Yaba)</strong> — out of area. Dropped from the target list and the place-URL table.</p>
 <p class='li'>&bull; <strong>Nett Pharmacy</strong> phone "12955051" is not a usable Nigerian number. Flagged invalid, not queued.</p>
 <p class='li'>&bull; <strong>Tier 1 of 4 included the HOLD row.</strong> Sendable Tier 1 is <strong>3</strong>.</p>
 <p class='li'>&bull; <strong>"20 Tier 1 or Tier 2" included HOLD and unreachable rows.</strong> Sendable is <strong>15</strong>.</p>
-<p class='li'>&bull; <strong>"No search URLs remain" was false.</strong> Four links still carried a Google search-query payload (Google's internal search-query fragment).</p>
-<p>  Every URL on this page is now a canonical place-ID URL</p>
-<p>  (<code>/maps/place/?q=place_id:...</code>), which contains no query payload at all. Live count: <strong>0</strong>.</p>
-<p class='li'>&bull; <strong>Two place-ID table rows were malformed HTML</strong> (Japhet, Nailsbyfey) — extra cells, ID not in</p>
-<p>  its own column. Rebuilt as a proper table.</p>
+<p class='li'>&bull; <strong>Search URLs.</strong> Four links once carried a Google search-query payload. Every URL is now a</p>
+<p>  canonical place-ID URL (<code>/maps/place/?q=place_id:...</code>), which has no query payload at all.</p>
+<p class='li'>&bull; <strong>Two table rows were split by a pipe character in the listing name</strong> (Japhet, Nailsbyfey).</p>
+<p>  Pipe characters are now escaped before rendering, so no cell can split. Japhet's address</p>
+<p>  field was also carrying scraped junk from the page markup. It now reads "Powa Plaza, behind</p>
+<p>  New Aviation, Ikeja, Lagos".</p>
 
 <h2>Filter applied</h2>
 
@@ -76,7 +77,7 @@
 <tr><td>Ezzy Place Cyber Cafe &amp; DI Printing Centre</td><td>4 Oriyomi St, off Kodesoh Street, Opebi, Ikeja 100001, Lagos</td><td>4.2</td><td>0815 771 5971</td><td>none</td><td><a href="https://www.google.com/maps/place/?q=place_id:0x103b9226e56e19c3:0x647ddce3b4ed85bb">https://www.google.com/maps/place/?q=place_id:0x103b9226e56e19c3:0x647ddce3b4ed85bb</a></td></tr>
 <tr><td>Food Headquarters Ikeja</td><td>7 Olowu St, Allen, Ikeja 100212, Lagos</td><td>4.6</td><td>0811 887 7147</td><td>none</td><td></td></tr>
 <tr><td>IKOKO</td><td>23b Isaac John St, Ikeja GRA, Ikeja 000000, Lagos</td><td>4.5</td><td>0915 436 6666</td><td>none</td><td><a href="https://www.google.com/maps/place/?q=place_id:0x103b935dfc959a3f:0x6b3d0db68250080">https://www.google.com/maps/place/?q=place_id:0x103b935dfc959a3f:0x6b3d0db68250080</a></td></tr>
-<tr><td>Japhet Laundry and Dry-cleaning Services</td><td>p"block powa plaza behind new aviation ikeja, Lagos</td><td>4.7</td><td>0706 616 9284</td><td>none</td><td><a href="https://www.google.com/maps/place/?q=place_id:0x103b935fb5920c5f:0x1a46bb373584bb5c">https://www.google.com/maps/place/?q=place_id:0x103b935fb5920c5f:0x1a46bb373584bb5c</a></td></tr>
+<tr><td>Japhet Laundry and Dry-cleaning Services</td><td>Powa Plaza, behind New Aviation, Ikeja, Lagos</td><td>4.7</td><td>0706 616 9284</td><td>none</td><td><a href="https://www.google.com/maps/place/?q=place_id:0x103b935fb5920c5f:0x1a46bb373584bb5c">https://www.google.com/maps/place/?q=place_id:0x103b935fb5920c5f:0x1a46bb373584bb5c</a></td></tr>
 <tr><td>Nailsbyfey</td><td>local government, No8 Amore street, Off Toyin Street, Ikeja Lagos Ikeja Ikeja, Lagos 100271, Lagos</td><td>4.8</td><td>0706 915 8434</td><td>none</td><td><a href="https://www.google.com/maps/place/?q=place_id:0x103b93734fd628af:0x905f66b82097a640">https://www.google.com/maps/place/?q=place_id:0x103b93734fd628af:0x905f66b82097a640</a></td></tr>
 <tr><td>Nett Pharmacy <strong>(phone invalid — do not message)</strong></td><td>33 Opebi Rd, Allen, Ikeja 101233, Lagos</td><td>3.7</td><td>12955051</td><td>none</td><td><a href="https://www.google.com/maps/place/?q=place_id:0x103b923f67678ebd:0x2f2eef99a591f661">https://www.google.com/maps/place/?q=place_id:0x103b923f67678ebd:0x2f2eef99a591f661</a></td></tr>
 <tr><td>Original Parts Nigeria</td><td>45B Opebi Rd, Opebi, Ikeja 100001, Lagos</td><td>4.7</td><td>0816 222 5612</td><td>none</td><td><a href="https://www.google.com/maps/place/?q=place_id:0x103b924060ea1cad:0xbd0f37e167712f50">https://www.google.com/maps/place/?q=place_id:0x103b924060ea1cad:0xbd0f37e167712f50</a></td></tr>
@@ -106,9 +107,11 @@
 <tr><td>15</td><td>Fiora' Garden</td><td>T1</td><td>0903 000 4080</td><td>—</td><td><a href="https://www.google.com/maps/place/?q=place_id:0x103b93007e98cd4b:0xa8f691d97ead4850">https://www.google.com/maps/place/?q=place_id:0x103b93007e98cd4b:0xa8f691d97ead4850</a></td></tr>
 </table>
 
-<h2>Place URLs verified (17)</h2>
+<h2>Place IDs verified (17)</h2>
 
-<p>Every URL is a canonical place-ID URL built from the place ID captured when the listing was opened. No search-query markers anywhere on this page.</p>
+<p>These are the place IDs captured when each listing was opened. <strong>Verified</strong> means the ID was</p>
+<p>read off the live listing — it does not mean the business is in the send queue. Nett Pharmacy</p>
+<p>(invalid phone) and Cafecito (no phone) are in this table and are not sendable.</p>
 
 <table>
 <tr><th>Business</th><th>Place ID</th></tr>
@@ -122,8 +125,8 @@
 <tr><td>IKOKO</td><td>0x103b935dfc959a3f:0x6b3d0db68250080</td></tr>
 <tr><td>Ican Lectures</td><td>0x103b922ed729f155:0xaa8caa95f5b8713c</td></tr>
 <tr><td>Ikeja lagos state</td><td>0x103b93003905e769:0xcd7515626dd4c7dc</td></tr>
-<tr><td>Japhet Laundry and Dry-cleaning Services</td><td>Ikeja, Lagos</td><td>0x103b935fb5920c5f:0x1a46bb373584bb5c</td></tr>
-<tr><td>Nailsbyfey</td><td>Nails techinician in Ikeja</td><td>Nails in Lagos</td><td>0x103b93734fd628af:0x905f66b82097a640</td></tr>
+<tr><td>Japhet Laundry and Dry-cleaning Services / Ikeja, Lagos</td><td>0x103b935fb5920c5f:0x1a46bb373584bb5c</td></tr>
+<tr><td>Nailsbyfey / Nails techinician in Ikeja / Nails in Lagos</td><td>0x103b93734fd628af:0x905f66b82097a640</td></tr>
 <tr><td>Nett Pharmacy</td><td>0x103b923f67678ebd:0x2f2eef99a591f661</td></tr>
 <tr><td>Original Parts Nigeria</td><td>0x103b924060ea1cad:0xbd0f37e167712f50</td></tr>
 <tr><td>Petite Wellness Spa (PWS)</td><td>0x103b93535a8dfac1:0x128693e280d3becb</td></tr>
